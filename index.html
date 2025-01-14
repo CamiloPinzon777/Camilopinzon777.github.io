@@ -1,83 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portafolio</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: #2c2c54; /* morado oscuro */
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-    .barra-superior {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50px; /* altura de la barra */
-      background-color: #4c4c7f; /* morado claro */
-    }
-    .contenedor-secciones {
-      height: 100vh; /* altura de la pantalla */
-      overflow-y: scroll; /* agregar barra de desplazamiento */
-    }
-    .seccion-1 {
-      background-color: #191919; /* color de fondo para la sección 1 */
-      height: 100vh; /* altura de la sección */
-      background-attachment: fixed; /* mantener el fondo fijo */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .seccion-2 {
-      background-color: #2c2c2c; /* color de fondo para la sección 2 */
-      height: 100vh; /* altura de la sección */
-      background-attachment: fixed; /* mantener el fondo fijo */
-    }
-    .seccion-3 {
-      background-color: #3f3f3f; /* color de fondo para la sección 3 */
-      height: 100vh; /* altura de la sección */
-      background-attachment: fixed; /* mantener el fondo fijo */
-    }
-    .titulo {
-      font-size: 48px;
-      color: #ffffff; /* blanco */
-    }
-    img {
-      width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .seccion-1 {
-        height: auto;
-      }
-      .seccion-2 {
-        height: auto;
-      }
-      .seccion-3 {
-        height: auto;
-      }
-    }
-    @media (max-width: 480px) {
-      .barra-superior {
-        height: 30px;
-      }
-      .titulo {
-        font-size: 24px;
-      }
-    }
-  </style>
+    <title>Portafolio</title>
+    <style>
+        body {
+            background-color: #2c2c54;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            scrollbar-color: #333399 #000;
+        }
+
+        .barra-superior {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333399;
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+            .barra-superior img {
+                float: left;
+                width: 28px;
+                height: 45px;
+                padding-left: 20px;
+            }
+
+        .texto-barra {
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            margin-left: 20px;
+            text-decoration: none;
+            transition:transform 0.1s ease-in-out;
+        }
+
+        .texto-barra:hover { 
+            transform: scale(1.2)
+        }
+
+
+        .contenedor-secciones {
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .seccion-1 {
+            background-image: url('portada del portafolio.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .seccion-1 img {
+                animation: caida 2s ease-in-out;
+                width: auto;
+                height: auto;
+            }
+
+        @keyframes caida {
+            0% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .seccion-2 {
+            background-image: url('seccion_2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .seccion-3 {
+            background-image: url('seccion_3.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .titulo {
+            font-size: 48px;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-  <div class="barra-superior"></div>
-  <div class="contenedor-secciones">
-    <div class="seccion-1">
-      <img src="portada del portafolio.jpg">
+    <div class="barra-superior">
+        <a href="index.html"><img src="logo_barra.png" alt="logo"></a>
+        <a href="#" class="texto-barra">Inicio</a>
+        <a href="#" class="texto-barra">Proyectos</a>
+        <a href="#" class="texto-barra">Trabajos</a>
+        <a href="#" class="texto-barra">Emprendimiento</a>
     </div>
-    <div class="seccion-2"></div>
-    <div class="seccion-3"></div>
-  </div>
+    <div class="contenedor-secciones">
+        <div class="seccion-1">
+            <img src="logo cp .png">
+        </div>
+        <div class="seccion-2">
+            <img src="seccion_2.jpg">
+        </div>
+        <div class="seccion-3">
+            <img src="seccion_3.jpg">
+        </div>
+    </div>
 </body>
 </html>
